@@ -10,7 +10,7 @@ In this app for state manage i used provider.
 Who want to learn provider in flutter they can refer or go through this project.
 
 
-## Thank you
+**Thank you**
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
