@@ -16,7 +16,7 @@ class WeatherState extends Equatable {
     return WeatherState(
       status: WeatherStatus.initial,
       weather: Weather.initial(),
-      error: CustomError(),
+      error: const CustomError(),
     );
   }
 

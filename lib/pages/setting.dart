@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:weather_app/providers/providers.dart';
 
-class SettingScreen extends StatefulWidget {
+class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
 
   @override
-  State<SettingScreen> createState() => _SettingScreenState();
-}
-
-class _SettingScreenState extends State<SettingScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Setting'),),body: Center(child: Text('Setting'),));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Setting'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: ListTile(
+          title: const Text('Temperature Unit'),
+          subtitle: const Text('Celsius/Fahrenheit (Default: Celsius)'),
+          trailing: Switch(value: context.watch<TempSettingsProvider>().state.tempUnit == TempUnit.celsius, onChanged: (_){
+            context.read<TempSettingsProvider>().toggleTempUnit();
+          }),
+        ),
+      ),
+    );
   }
 }
