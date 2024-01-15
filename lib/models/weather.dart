@@ -20,9 +20,9 @@ class Weather extends Equatable {
     required this.lastUpdated,
   });
 
-  factory Weather.fromJson(json) {
+  factory Weather.fromJson(Map<String,dynamic>json) {
     final weather = json["weather"][0];
-    final main = json["temp"];
+    final main = json["main"];
     return Weather(
       description: weather["description"],
       icon: weather["icon"],
@@ -63,5 +63,27 @@ class Weather extends Equatable {
   @override
   String toString() {
     return 'Weather(description: $description, icon: $icon, temp: $temp, tempMin: $tempMin, tempMax: $tempMax, name: $name, country: $country, lastUpdated: $lastUpdated)';
+  }
+
+  Weather copyWith({
+    String? description,
+    String? icon,
+    double? temp,
+    double? tempMin,
+    double? tempMax,
+    String? name,
+    String? country,
+    DateTime? lastUpdated,
+  }) {
+    return Weather(
+      description: description ?? this.description,
+      icon: icon ?? this.icon,
+      temp: temp ?? this.temp,
+      tempMin: tempMin ?? this.tempMin,
+      tempMax: tempMax ?? this.tempMax,
+      name: name ?? this.name,
+      country: country ?? this.country,
+      lastUpdated: lastUpdated ?? this.lastUpdated,
+    );
   }
 }
