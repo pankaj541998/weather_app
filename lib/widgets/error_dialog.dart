@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 void errorDialog(BuildContext context, String errorMessage) {
   // if (Platform.isIOS) {
@@ -13,7 +10,7 @@ void errorDialog(BuildContext context, String errorMessage) {
         content: Text(errorMessage),
         actions: [
           CupertinoDialogAction(
-            child: Text('Ok'),
+            child: const Text('Ok'),
             onPressed: ()=>Navigator.pop(context),
           )
         ],
