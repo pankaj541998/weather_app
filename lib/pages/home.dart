@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     builder: (context) => const SearchScreen(),
                   ),
                 );
-                print('_city $_city');
+                // print('_city $_city');
                 if (_city != null) {
                   context.read<WeatherProvider>().fetchWeather(_city!);
                 }
