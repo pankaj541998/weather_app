@@ -1,3 +1,4 @@
+name: "Build & Release"
 on:
   pull_request:
     branches:
@@ -5,7 +6,10 @@ on:
   push:
     branches:
       - main
-name: "Build & Release"
+
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   build:
     name: Build & Release
