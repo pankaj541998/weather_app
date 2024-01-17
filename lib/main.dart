@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 import 'pages/home.dart';
 
 void main() async {
-  await dotenv.load(fileName: 'lib/.env');
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 
